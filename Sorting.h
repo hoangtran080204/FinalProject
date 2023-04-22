@@ -26,12 +26,12 @@ void shellSort(std::vector<int>& arr)
 
             arr[j] = temp;
         }
-        gap = gap / 2; // chosen by experimentation
+        gap = gap / 2;
     }
 }
 
 //Quick sort implementation using pseudocode from the slide
-int partition(vector<int>& arr, int low, int high)
+int partition(std::vector<int>& arr, int low, int high)
 {
     int pivot = arr[high];
     int index = (low - 1);
@@ -39,15 +39,15 @@ int partition(vector<int>& arr, int low, int high)
     for (int j = low; j < high; j++) {
         if (arr[j] <= pivot) {
             index++;
-            swap(arr[index], arr[j]);
+            std::swap(arr[index], arr[j]);
         }
     }
-    swap(arr[index + 1], arr[high]);
+    std::swap(arr[index + 1], arr[high]);
     return (index + 1); // low index
 }
 
 // Function to implement quick sort
-void quickSort(vector<int>& arr, int low, int high)
+void quickSort(std::vector<int>& arr, int low, int high)
 {
     if (low < high) {
         int pivot = partition(arr, low, high);
